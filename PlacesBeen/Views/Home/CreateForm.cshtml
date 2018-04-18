@@ -1,9 +1,14 @@
-<h1>Places I've Been</h1>
+<link href="~/css/styles.css" rel="stylesheet" type="text/css">
+<h1 class="class1">Places I've Been</h1>
 <h3>Add a new place:</h3>
 <form action='/places' method='post'>
   <label for='new-place'>City name</label>
   <input id='new-place' name='new-place' type='text'>
   <label for='new-landmark'>Landmark</label>
   <input id='new-landmark' name='new-landmark' type='text'>
+  <label for='new-url'>Image Url</label>
+  <input id='new-url' name='new-url' type='text'>
+
   <button type='submit'>Add place</button>
+
 </form>

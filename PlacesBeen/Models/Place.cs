@@ -9,14 +9,17 @@ namespace PlacesBeen.Models
     private string _cityName;
     private int _id;
     private string _landmark;
+    private string _imageUrl;
     private static List<Place> _places = new List<Place> {};
 
-    public Place (string cityName, string landmark)
+    public Place (string cityName, string landmark, string imageUrl)
     {
       _cityName = cityName;
       _places.Add(this);
       _id = _places.Count;
       _landmark = landmark;
+      _imageUrl =imageUrl;
+
     }
     public string GetCityName()
     {
@@ -38,6 +41,15 @@ namespace PlacesBeen.Models
     public void SetLandmark(string newLandmark)
     {
       _landmark = newLandmark;
+    }
+
+    public string GetImageUrl()
+    {
+      return _imageUrl;
+    }
+    public void SetImageUrl(string newImageUrl)
+    {
+      _imageUrl = newImageUrl;
     }
 
 
