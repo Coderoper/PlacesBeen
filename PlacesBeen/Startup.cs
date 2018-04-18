@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 
 namespace PlacesBeen
 {
@@ -27,12 +28,12 @@ namespace PlacesBeen
     {
       app.UseDeveloperExceptionPage();
       app.UseMvc(routes =>
-
       {
         routes.MapRoute(
           name: "default",
           template: "{controller=Home}/{action=Index}/{id?}");
       });
+      app.UseStaticFiles();
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("ITS ALIVE!"); //default -- checks to see if working before adding content

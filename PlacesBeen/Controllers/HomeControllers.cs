@@ -23,7 +23,7 @@ namespace PlacesBeen.Controllers
       [HttpPost("/places")]
       public ActionResult Create()
       {
-        Place newPlace = new Place (Request.Form["new-place"]);
+        Place newPlace = new Place (Request.Form["new-place"], Request.Form["new-andmark"]);
         List<Place> allPlaces = Place.GetAll();
         return View("Index", allPlaces);
       }
@@ -33,6 +33,12 @@ namespace PlacesBeen.Controllers
       {
           Place place = Place.Find(id);
           return View(place);
+      }
+      [HttpGet("/photos")]
+      public ActionResult Photos()
+      {
+        return View();
+
       }
 
     }
